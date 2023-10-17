@@ -151,7 +151,7 @@ body {
 .section-group {
   display: flex;
   flex-direction: column;
-  row-gap: 80px;
+  row-gap: 79px;
   border-bottom: 1px solid var(--clr-base-lighter);
 }
 
@@ -262,6 +262,7 @@ body {
 }
 
 .hero__content {
+  flex-direction: column;
   max-width: 579px;
   color: var(--clr-ntrl-min);
 }
@@ -282,8 +283,8 @@ body {
   line-height: 30px;
 }
 
-.btn-primary {
-  display: inline-block;
+.hero__btn {
+  align-self: flex-start;
   padding: 23px 35px;
   border-radius: var(--border-radius);
   font-size: 18px;
@@ -293,17 +294,17 @@ body {
   transition: outline .3s ease-out;
 }
 
-.btn-primary:focus {
+.hero__btn:focus {
   outline: 2px solid var(--clr-primary-light);
   outline-offset: 5px;
 }
 
-.btn-primary:hover {
+.hero__btn:hover {
   outline: 3px solid var(--clr-primary-lighter);
   outline-offset: 0;
 }
 
-.btn-primary:active {
+.hero__btn:active {
   background-color: var(--clr-primary-dark);
 }
 
@@ -335,10 +336,11 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   row-gap: 14px;
-  padding-bottom: 6px;
+  margin-bottom: 6px;
 }
 
 .gallery__images {
+  flex-wrap: wrap;
   justify-content: flex-end;
   gap: var(--gap-content);
   flex-basis: 71.9%;
@@ -442,7 +444,7 @@ body {
   line-height: normal;
 }
 
-.acticle-preview__subheading {
+.article-preview__subheading {
   margin: 0;
   margin-bottom: 15px;
   font-size: 12px;
@@ -454,17 +456,17 @@ body {
 
 /* events */
 .events__list {
-  --offsets: 2;
+  flex-wrap: wrap;
   gap: var(--gap-content);
 }
 
 .events__item {
-  width: calc((100% - (var(--gap-content) * var(--offsets))) / (var(--offsets) + 1));
+  flex: 1;
 }
 
 .card {
   flex-direction: column;
-  height: 100%;
+  flex-basis: calc((100% - (var(--gap-content) * 2)) / 3);
   overflow: hidden;
   background-color: var(--clr-ntrl-min);
 }
@@ -477,7 +479,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   flex: 1;
-  padding: 12px 50px 47px;
+  padding: 13px 50px 47px;
   border: 1px solid var(--clr-base-lighter);
   border-top: none;
   min-height: 400px;
@@ -561,19 +563,24 @@ body {
 
 /* projects */
 .projects__subtitle {
-  margin-bottom: 16px;
+  margin-bottom: 17px;
 }
 
 .projects__descr {
-  margin-bottom: 29px;
+  margin-bottom: 30px;
 }
 
 .partners-section {
+  flex-wrap: wrap;
   gap: 34px;
 }
 
 .partners-item {
-  padding: 24px 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 26px;
   border: 1px solid var(--clr-base-lighter);
   max-width: 329px;
   width: 100%;
@@ -697,6 +704,7 @@ body {
   border-radius: 50%;
   opacity: 1;
 }
+
 
 /* footer */
 .footer {
